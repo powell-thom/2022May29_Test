@@ -13,14 +13,73 @@
   <button id="lawyersOnly">Only Lawyer Assignments</button>
   <button id="socialOnly">Only Social Worker Assignments</button>
   <button id="allAssignments">All Assignments</button>
-  <br><br><hr>
-  <div class="lawyer" id="lawyer_01">Probate assignment #1<hr></div>
-  <div class="lawyer" id="lawyer_02">Probate assignment #2<hr></div>
-  <div class="social" id="social_01">Social worker assignment #1<hr></div>
+  <br><br>
+  <div class="lawyer" id="lawyer_01">
+    <hr>
+    <h3>Probate assignment #1</h3>
+    <p class="details" id="lawyer_01_details">
+      Details on probate lawyer assignment #1
+    </p>
+  </div>
+  
+  <div class="lawyer" id="lawyer_02">
+    <hr>
+    <h3>Probate assignment #2</h3>
+    <p class="details" id="lawyer_02_details">
+      Details on probate lawyer assignment #2
+    </p>    
+  </div>
+  
+  <div class="social" id="social_01">
+    <hr>
+    <h3>Social worker assignment #1</h3>
+    <p class="details" id="social_01_details">
+      Details on scoial worker assignment #1
+    </p>
+  </div>
 
 
   <script>
-  
+  // Initially Hide All Details
+  hideAllDetails();
+
+  // Define Hide All Details
+  function hideAllDetails() {
+  const allDetails = document.getElementsByClassName("details");
+  for (let i = 0; i < allDetails.length; i++) {
+    hideItems(allDetails[i])
+  }
+  } 
+
+  // Show Details on Hover
+  document.getElementById("lawyer_01").
+    addEventListener("mouseover",displayLawyer_01_details);
+  document.getElementById("lawyer_01").
+    addEventListener("mouseout",hideAllDetails);
+
+  document.getElementById("lawyer_02").
+    addEventListener("mouseover",displayLawyer_02_details);
+  document.getElementById("lawyer_02").
+    addEventListener("mouseout",hideAllDetails);
+
+  document.getElementById("social_01").
+    addEventListener("mouseover",displaySocial_01_details);
+  document.getElementById("social_01").
+    addEventListener("mouseout",hideAllDetails);
+
+  // Show Details
+  function displayLawyer_01_details() {
+    document.getElementById("lawyer_01_details").style.display = "inline";
+  }
+
+  function displayLawyer_02_details() {
+    document.getElementById("lawyer_02_details").style.display = "inline";
+  }
+
+  function displaySocial_01_details() {
+    document.getElementById("social_01_details").style.display = "inline";
+  }
+
   // Add Event Listen to Button  
   document.getElementById("lawyersOnly").addEventListener("click",funcLawyersOnly);
   document.getElementById("socialOnly").addEventListener("click",funcSocialOnly);  
