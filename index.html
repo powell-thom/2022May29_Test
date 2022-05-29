@@ -53,30 +53,27 @@
 
   // Show Details on Hover
   document.getElementById("lawyer_01").
-    addEventListener("mouseover",displayLawyer_01_details);
-  document.getElementById("lawyer_01").
-    addEventListener("mouseout",hideAllDetails);
+    addEventListener("click",displayLawyer_01_details);
 
   document.getElementById("lawyer_02").
-    addEventListener("mouseover",displayLawyer_02_details);
-  document.getElementById("lawyer_02").
-    addEventListener("mouseout",hideAllDetails);
+    addEventListener("click",displayLawyer_02_details);
 
   document.getElementById("social_01").
-    addEventListener("mouseover",displaySocial_01_details);
-  document.getElementById("social_01").
-    addEventListener("mouseout",hideAllDetails);
+    addEventListener("click",displaySocial_01_details);
 
   // Show Details
   function displayLawyer_01_details() {
+    hideAllDetails();
     document.getElementById("lawyer_01_details").style.display = "inline";
   }
 
   function displayLawyer_02_details() {
+    hideAllDetails();
     document.getElementById("lawyer_02_details").style.display = "inline";
   }
 
   function displaySocial_01_details() {
+    hideAllDetails();
     document.getElementById("social_01_details").style.display = "inline";
   }
 
