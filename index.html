@@ -10,8 +10,9 @@
 
 <body>
   <h1 id="title">Fee Generating Assignments</h1>
-  <button id="lawyersOnly">Only Show Lawyer Assignments</button>
-  <button id="socialOnly">Only Show Social Worker Assignments</button>
+  <button id="lawyersOnly">Only Lawyer Assignments</button>
+  <button id="socialOnly">Only Social Worker Assignments</button>
+  <button id="allAssignments">All Assignments</button>
   <br><br><hr>
   <div class="lawyer" id="lawyer_01">Probate assignment #1<hr></div>
   <div class="lawyer" id="lawyer_02">Probate assignment #2<hr></div>
@@ -21,30 +22,77 @@
   <script>
   
   // Add Event Listen to Button  
-  document.getElementById("lawyersOnly").addEventListener("click",hideNonLawyers);
-  document.getElementById("socialOnly").addEventListener("click",hideNonSocial);  
+  document.getElementById("lawyersOnly").addEventListener("click",funcLawyersOnly);
+  document.getElementById("socialOnly").addEventListener("click",funcSocialOnly);  
+  document.getElementById("allAssignments").addEventListener("click",funcShowAll);
+    
+  // Lawyers Only
+  function funcLawyersOnly() {
+  hideAll();
+  showLawyer();    
+  }  
 
-  // Hide Non-Lawyers Function
-  function hideNonLawyers() {
-  const nonLawyers = document.getElementsByClassName("social");
-  for (let i = 0; i < nonLawyers.length; i++) {
-    hideItems(nonLawyers[i])
-  }
-  }
+  // Social Only
+  function funcSocialOnly() {
+  hideAll();
+  showSocial();    
+  }  
 
-  // Hide Non-Social Function
-  function hideNonSocial() {
-  const nonSocial = document.getElementsByClassName("lawyer");
-  for (let i = 0; i < nonSocial.length; i++) {
-    hideItems(nonSocial[i])
-  }
+  // Show All  
+  function funcShowAll() {
+  showLawyer();
+  showSocial();
   }
     
+  // Hide All Assignments Function
+  function hideAll() {
+  hideSocial();
+  hideLawyer();
+  }
+    
+  // Hide All Social Roles Function
+  function hideSocial() {
+  const allSocial = document.getElementsByClassName("social");
+  for (let i = 0; i < allSocial.length; i++) {
+    hideItems(allSocial[i])
+  }
+  }
 
+  // Show All Social Roles Function
+  function showSocial() {
+  const allSocial = document.getElementsByClassName("social");
+  for (let i = 0; i < allSocial.length; i++) {
+    showItems(allSocial[i])
+  }
+  }
+
+  // Hide All Lawyer Roles Function
+  function hideLawyer() {
+  const allLawyer = document.getElementsByClassName("lawyer");
+  for (let i = 0; i < allLawyer.length; i++) {
+    hideItems(allLawyer[i])
+  }
+  }
+
+  // Show All Lawyer Roles Function
+  function showLawyer() {
+  const allLawyer = document.getElementsByClassName("lawyer");
+  for (let i = 0; i < allLawyer.length; i++) {
+    showItems(allLawyer[i])
+  }
+  } 
+    
   // Universal Function to Hide Things
   function hideItems(n) {
       n.style.display = "none";
   }
+
+  // Universal Function to Show Things
+  function showItems(n) {
+      n.style.display = "inline";
+  }
+
+    
   </script>
 </body>
 
