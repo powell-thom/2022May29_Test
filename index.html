@@ -6,27 +6,84 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="./list.js" defer></script>
 </head>
 
 <body>
-  <h1 id="title">Fee Generating Assignments</h1>
+  <h1 id="title">Massachusetts Fee-Generating Appointments</h1>
   <button id="lawyersOnly">Only Lawyer Assignments</button>
   <button id="socialOnly">Only Social Worker Assignments</button>
   <button id="allAssignments">All Assignments</button>
   <br><br>
   <div class="lawyer" id="lawyer_01">
     <hr>
-    <h3>Probate assignment #1</h3>
+    <h3>Land Court Department: <u> Title Examiner</u> in Tax Foreclosure case</h3>
     <p class="details" id="lawyer_01_details">
-      Details on probate lawyer assignment #1
+      G.L. c. 60, § 66
+      <br><br>
+      <B>Method of Appointment:</B> By Recorder or Deputy Recorder from list
+      <br><br>
+      <b>Qualifications:</b>
+      <br>
+      1) Member of the Massachusetts Bar for three years or more, and
+      <br>
+      2) Experience in conveyancing/title examination as evidenced by (a) resume, 
+      (b) two letters of recommendation from members of the Massachusetts Bar 
+      familiar with the applicant’s work, and (c) sample abstract of title
+      <br><br>
+      <b>Method of Application:</b>
+      <br>
+      <a href="https://www.mass.gov/lists/land-court-forms"
+        target="_blank" rel="noopener noreferrer">
+        Application Form is available on the Land Court web page.</a>
+      <br>
+      Apply to:
+      <br>
+      Chief Justice Gordon H. Piper
+      <br>
+      Land Court Department
+      <br>
+      Three Pemberton Square
+      <br>
+      Boston, MA 02108
     </p>
   </div>
   
   <div class="lawyer" id="lawyer_02">
     <hr>
-    <h3>Probate assignment #2</h3>
+    <h3>Land Court Department: <u>Commissioner</u> for Partition of Real Estate</h3>
     <p class="details" id="lawyer_02_details">
-      Details on probate lawyer assignment #2
+     G.L. c. 241, § 12.
+      <br><br>
+      <B>Method of Appointment:</B> By Judge from list
+      <br><br>
+      <b>Qualifications:</b>
+      <br>
+      1) Admission to practice before SJC in good standing
+      <br>
+      2) No felony conviction
+      <br>
+      3) At least 10 years’ experience practicing in the real estate field, including       at least three cases involving the partition of real estate - at least one of         which has been completed, either through partition on the ground or a sale
+      <br>
+      4) Working knowledge of G.L. c. 241
+      <br>
+      5) Professional liability insurance of at least $100,000
+      <br><br>
+      <b>Method of Application:</b>
+      <br>
+      <a href="https://www.mass.gov/lists/land-court-forms"
+        target="_blank" rel="noopener noreferrer">
+        Application Form is available on the Land Court web page.</a>
+      <br>
+      Submit to:
+      <br>
+      Chief Justice Gordon H. Piper
+      <br>
+      Land Court Department
+      <br>
+      Three Pemberton Square
+      <br>
+      Boston, MA 02108
     </p>    
   </div>
   
@@ -38,122 +95,6 @@
     </p>
   </div>
 
-
-  <script>
-  // Things left to do 5/29/22
-  //    -style in CSS
-  //    -populate ral data to get everything to fit
-  //    -learn how to recombine to the main branch in github
-  // Initially Hide All Details
-  hideAllDetails();
-
-  // Define Hide All Details
-  function hideAllDetails() {
-  const allDetails = document.getElementsByClassName("details");
-  for (let i = 0; i < allDetails.length; i++) {
-    hideItems(allDetails[i])
-  }
-  } 
-
-  // Show Details on Hover
-  document.getElementById("lawyer_01").
-    addEventListener("click",displayLawyer_01_details);
-
-  document.getElementById("lawyer_02").
-    addEventListener("click",displayLawyer_02_details);
-
-  document.getElementById("social_01").
-    addEventListener("click",displaySocial_01_details);
-
-  // Show Details
-  function displayLawyer_01_details() {
-    hideAllDetails();
-    document.getElementById("lawyer_01_details").style.display = "inline";
-  }
-
-  function displayLawyer_02_details() {
-    hideAllDetails();
-    document.getElementById("lawyer_02_details").style.display = "inline";
-  }
-
-  function displaySocial_01_details() {
-    hideAllDetails();
-    document.getElementById("social_01_details").style.display = "inline";
-  }
-
-  // Add Event Listen to Button  
-  document.getElementById("lawyersOnly").addEventListener("click",funcLawyersOnly);
-  document.getElementById("socialOnly").addEventListener("click",funcSocialOnly);  
-  document.getElementById("allAssignments").addEventListener("click",funcShowAll);
-    
-  // Lawyers Only
-  function funcLawyersOnly() {
-  hideAll();
-  showLawyer();    
-  }  
-
-  // Social Only
-  function funcSocialOnly() {
-  hideAll();
-  showSocial();    
-  }  
-
-  // Show All  
-  function funcShowAll() {
-  showLawyer();
-  showSocial();
-  }
-    
-  // Hide All Assignments Function
-  function hideAll() {
-  hideSocial();
-  hideLawyer();
-  }
-    
-  // Hide All Social Roles Function
-  function hideSocial() {
-  const allSocial = document.getElementsByClassName("social");
-  for (let i = 0; i < allSocial.length; i++) {
-    hideItems(allSocial[i])
-  }
-  }
-
-  // Show All Social Roles Function
-  function showSocial() {
-  const allSocial = document.getElementsByClassName("social");
-  for (let i = 0; i < allSocial.length; i++) {
-    showItems(allSocial[i])
-  }
-  }
-
-  // Hide All Lawyer Roles Function
-  function hideLawyer() {
-  const allLawyer = document.getElementsByClassName("lawyer");
-  for (let i = 0; i < allLawyer.length; i++) {
-    hideItems(allLawyer[i])
-  }
-  }
-
-  // Show All Lawyer Roles Function
-  function showLawyer() {
-  const allLawyer = document.getElementsByClassName("lawyer");
-  for (let i = 0; i < allLawyer.length; i++) {
-    showItems(allLawyer[i])
-  }
-  } 
-    
-  // Universal Function to Hide Things
-  function hideItems(n) {
-      n.style.display = "none";
-  }
-
-  // Universal Function to Show Things
-  function showItems(n) {
-      n.style.display = "inline";
-  }
-
-    
-  </script>
 </body>
 
 </html>
